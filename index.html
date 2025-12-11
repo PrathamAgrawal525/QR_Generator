@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QR Studio — Animated Gradient</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- QR library (client-side canvas generator) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+
+  <main class="page">
+    <header class="brand">
+      <div class="logo-mark">QR</div>
+      <h1>QR Studio</h1>
+      <p class="tag">Animated gradient • Live preview • Download PNG</p>
+    </header>
+
+    <section class="card grid">
+      <form id="controls" class="controls">
+        <label class="field">
+          <span class="label">Text / URL</span>
+          <input id="data" type="text" placeholder="https://example.com or any text" required />
+        </label>
+
+        <div class="row">
+          <label class="field small">
+            <span class="label">Size (px)</span>
+            <input id="size" type="number" min="128" max="1200" value="400" />
+          </label>
+
+          <label class="field small">
+            <span class="label">Border (modules)</span>
+            <input id="border" type="number" min="0" max="40" value="4" />
+          </label>
+        </div>
+
+        <div class="row">
+          <label class="field color">
+            <span class="label">QR Color</span>
+            <input id="fg" type="color" value="#0b172a" />
+          </label>
+
+          <label class="field color">
+            <span class="label">Background</span>
+            <input id="bg" type="color" value="#ffffff" />
+          </label>
+        </div>
+
+        <label class="field">
+          <span class="label">Logo (optional) — drag & drop or click</span>
+          <div id="dropZone" class="dropzone">
+            <input id="logo" type="file" accept="image/*" />
+            <div class="drop-inner">
+              <svg viewBox="0 0 24 24" class="icon">
+                <path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.84v6h4.66V9h3.84L12 2z" />
+              </svg>
+              <small id="dropText">Drop image or click to upload</small>
+            </div>
+          </div>
+          <div class="hint">PNG recommended (transparent background). Max 4MB.</div>
+        </label>
+
+        <label class="field">
+          <span class="label">Logo scale</span>
+          <input id="logoScale" type="range" min="0.05" max="0.35" step="0.01" value="0.18" />
+          <div class="range-label"><span id="scaleLabel">18%</span></div>
+        </label>
+
+        <div class="actions">
+          <button id="previewBtn" type="button" class="btn btn-outline">Preview</button>
+          <button id="downloadBtn" type="button" class="btn btn-primary">Download PNG</button>
+          <button id="resetBtn" type="button" class="btn btn-ghost">Reset</button>
+        </div>
+
+        <div id="error" class="error"></div>
+      </form>
+
+      <aside class="preview-col">
+        <div class="preview-card">
+          <div class="preview-header">
+            <h3>Live Preview</h3>
+            <small id="info">Looks great — scan to test</small>
+          </div>
+          <div class="preview-wrap">
+            <canvas id="qrCanvas" width="400" height="400" aria-label="QR preview"></canvas>
+          </div>
+          <div class="download-hint">Tip: Use "Download PNG" to save a high-quality image.</div>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="foot">
+      <small>Built with ❤️ • Client-side QR generation • No server needed</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
