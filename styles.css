@@ -1,6 +1,4 @@
 /* styles.css — Animated Gradient UI for QR Studio */
-/* Save this file next to index.html and script.js */
-
 :root {
     --card-bg: rgba(255, 255, 255, 0.06);
     --glass: rgba(255, 255, 255, 0.06);

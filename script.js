@@ -1,5 +1,4 @@
 // script.js — client-side QR generation with Qrious + logo overlay
-// Save next to index.html and styles.css
 
 const $ = (id) => document.getElementById(id);
 
