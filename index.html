@@ -78,12 +78,19 @@
       </form>
 
       <aside class="preview-col">
-        <div class="preview-card">
+        <div class="preview-card animated-border">
+
           <h3>Live Preview</h3>
-          <img id="qr-img" src="https://media.istockphoto.com/id/1347277567/vector/qr-code-sample-for-smartphone-scanning-on-white-background.jpg?s=612x612&w=0&k=20&c=PYhWHZ7bMECGZ1fZzi_-is0rp4ZQ7abxbdH_fm8SP7Q=" alt="QR Preview">
-          <canvas id="qrCanvas" width="400" height="400"></canvas>
+          <p id="previewText">QR Preview</p>
+
+          <div id="qrWrapper" class="qr-container">
+            <img id="qrPreview" style="display:none;" alt="QR Preview">
+          </div>
+
         </div>
+
       </aside>
+
     </section>
 
     <footer class="foot">
